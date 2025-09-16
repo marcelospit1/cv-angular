@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']   // ✅ en plural y con array
 })
-export class App {
-  protected readonly title = signal('cv-angular');
+
+export default class App {   
+  year = new Date().getFullYear();
 }
